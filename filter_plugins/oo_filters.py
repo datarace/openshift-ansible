@@ -1262,8 +1262,5 @@ class FilterModule(object):
             "oo_filter_sa_secrets": oo_filter_sa_secrets,
             "oo_l_of_d_to_csv": oo_l_of_d_to_csv,
             "oo_has_no_matching_selector": oo_has_no_matching_selector,
-<<<<<<< HEAD
         }
-=======
-        }
->>>>>>> 5b89d37e7... add prometheus and community grafana to 3.7
+
