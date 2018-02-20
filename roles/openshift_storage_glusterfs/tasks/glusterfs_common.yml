@@ -312,10 +312,6 @@
   when:
   - glusterfs_storageclass or glusterfs_s3_deploy
 
-<<<<<<< HEAD
-- include: glusterblock_deploy.yml
-  when: glusterfs_block_deploy
-=======
 - include_tasks: glusterblock_deploy.yml
   when:
   - glusterfs_block_deploy
@@ -366,7 +362,6 @@
       files:
       - "{{ mktemp.stdout }}/gluster-block-storageclass.yml"
   when: glusterfs_block_storageclass
->>>>>>> bc712160d... GlusterFS: Fix block StorageClass heketi route
 
 - include: gluster_s3_deploy.yml
   when: glusterfs_s3_deploy
