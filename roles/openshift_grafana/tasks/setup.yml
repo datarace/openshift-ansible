@@ -140,7 +140,7 @@
   retries: "{{ (grafana_timeout | int / 10) | int }}"
 
 - name: Get the prometheus SA
-  shell: oc sa get-token {{ grafana_prometheus_serviceaccount }} -n {{ grafana_prometheus_namespace }}
+  shell: "{{ openshift.common.client_binary }} sa get-token {{ grafana_prometheus_serviceaccount }} -n {{ grafana_prometheus_namespace }}"
   register: prometheus_sa_token
 
 - name: Get prometheus route
@@ -209,7 +209,6 @@
   register: slurpfile
 
 - name: Add openshift dashboard
-  delegate_to: master.ocpcluster.local
   uri:
     url: "{{ grafana_route }}/api/dashboards/db"
     user: admin
